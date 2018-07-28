@@ -27,7 +27,8 @@ wget -P /path/to/lualib/resty/ https://raw.githubusercontent.com/doujiang24/lua-
 
 
 ```bash
-opm get anjia0532/lua-jrebel-license-server
+# opm get anjia0532/lua-jrebel-license-server fail upload to opm server -_- 
+wget -P /path/to/lualib/resty/ https://raw.githubusercontent.com/anjia0532/lua-jrebel-license-server/master/lib/resty/jrebel-license.lua
 ```
 
 ## 用法(Synopsis)
