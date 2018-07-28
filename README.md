@@ -2,23 +2,27 @@
 ## 介绍(introduce)
 
 Jrebel & Jet Brains License Server for Lua(support Jrebel,JRebel for Android,XRebel Local,JetBrains Products)
-Lua 版的 Jrebel 和 Jet Brains 授权服务器(支持 Jrebel,Jrebel for Android,Xrebel Local,JetBrains Products)
+
+> Lua 版的 Jrebel 和 Jet Brains 授权服务器(支持 Jrebel,Jrebel for Android,Xrebel Local,JetBrains Products)
 
 ## 鸣谢(Thanks)
 
 Thanks for [ilanyu](http://blog.lanyus.com) and [gsls200808](https://gitee.com/gsls200808)
+
 NOTE: This is provided for educational purposes only. Please support genuine.
 
-非常感谢 [ilanyu](http://blog.lanyus.com) 和 [gsls200808](https://gitee.com/gsls200808) (本项目逻辑部分全部移植自https://gitee.com/gsls200808/JrebelLicenseServerforJava ,本项目只做了java to lua工作)
-注意： 本项目仅适用于教育用途，请支持正版
+> 非常感谢 [ilanyu](http://blog.lanyus.com) 和 [gsls200808](https://gitee.com/gsls200808) (本项目逻辑部分全部移植自https://gitee.com/gsls200808/JrebelLicenseServerforJava ,本项目只做了java to lua工作)
+
+> 注意： 本项目仅适用于教育用途，请支持正版
 
 ## 依赖(Prerequisites)
 
 [install openresty](https://openresty.org/en/installation.html)
-[安装openresty](https://openresty.org/cn/installation.html)
+>  [安装openresty](https://openresty.org/cn/installation.html)
 
 download [doujiang24/lua-resty-rsa](https://github.com/doujiang24/lua-resty-rsa) from github raw server(because opm.openresty.org's version(v0.02) is too low )
-从github 上下载最新的[doujiang24/lua-resty-rsa](https://github.com/doujiang24/lua-resty-rsa)代码(需要v0.04以上)
+
+> 从github 上下载最新的[doujiang24/lua-resty-rsa](https://github.com/doujiang24/lua-resty-rsa)代码(需要v0.04以上)
 
 ```bash
 wget -P /path/to/lualib/resty/ https://raw.githubusercontent.com/doujiang24/lua-resty-rsa/master/lib/resty/rsa.lua
@@ -50,13 +54,16 @@ wget -P /path/to/lualib/resty/ https://raw.githubusercontent.com/anjia0532/lua-j
 ```
 
 JetBrains Activation address was: $scheme://$host[:$port]/
-JetBrains 产品激活地址: $scheme://$host[:$port]/   e.g. http://8.8.8.8/  (不支持localhost激活)
+
+> JetBrains 产品激活地址: $scheme://$host[:$port]/   e.g. http://8.8.8.8/  (不支持localhost激活)
 
 JRebel 7.1 and earlier version Activation address was: $scheme://$host[:$port]/{tokenname}, with any email.
-JRebel 7.1 以及更早的版本激活地址 $scheme://$host[:$port]/{tokenname} 以及任意的email地址(可以是不存在的)
+
+> JRebel 7.1 以及更早的版本激活地址 $scheme://$host[:$port]/{tokenname} 以及任意的email地址(可以是不存在的)
 
 JRebel 2018.1 and later version Activation address was: $scheme://$host[:$port]/{guid}(eg:$scheme://$host[:$port]/dd5f6ce0-8ed9-11e8-9eb6-529269fb1459), with any email.
-JRebel 2018.1 以及更高版本激活地址 $scheme://$host[:$port]/{guid} 例如 http://8.8.8.8/dd5f6ce0-8ed9-11e8-9eb6-529269fb1459 以及任意的email地址 （uuid在线生成 https://www.uuidgenerator.net/）
+
+> JRebel 2018.1 以及更高版本激活地址 $scheme://$host[:$port]/{guid} 例如 http://8.8.8.8/dd5f6ce0-8ed9-11e8-9eb6-529269fb1459 以及任意的email地址 （uuid在线生成 https://www.uuidgenerator.net/）
 
 ## 支持产品(Support)
 
@@ -68,7 +75,8 @@ JRebel 2018.1 以及更高版本激活地址 $scheme://$host[:$port]/{guid} 例�
 ## 注意事项(Note)
 
 This is provided for educational purposes only. Please support genuine.
-非常感谢 [ilanyu](http://blog.lanyus.com) 和 [gsls200808](https://gitee.com/gsls200808) (本项目逻辑部分全部移植自https://gitee.com/gsls200808/JrebelLicenseServerforJava ,本项目只做了java to lua工作)
+
+> 非常感谢 [ilanyu](http://blog.lanyus.com) 和 [gsls200808](https://gitee.com/gsls200808) (本项目逻辑部分全部移植自https://gitee.com/gsls200808/JrebelLicenseServerforJava ,本项目只做了java to lua工作)
 
 ## 反馈(Feedback)
 
