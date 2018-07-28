@@ -38,7 +38,7 @@ jzefE9sKUw==
 ]]
 
 
-_M._VERSION               = '0.01'
+_M._VERSION               = 'v0.01'
 
 local mt                  = { __index = _M }
 
@@ -78,7 +78,7 @@ local function switch(t)
     local f=self[x] or self.default
     if f then
       if type(f)=="function" then
-        f(x,self)
+        return f(x,self)
       else
         error("case "..tostring(x).." not a function")
       end
@@ -88,17 +88,17 @@ local function switch(t)
 end
 
 local route = switch {
-  ["/"] = function() indexHandler() end,
+  ["/"] = function() return indexHandler() end,
   -- jrebel
-  ["/jrebel/leases"] =  function() jrebelLeasesHandler() end,
-  ["/jrebel/leases/1"] = function() jrebelLeases1Handler() end,
-  ["/agent/leases"] = function()  jrebelLeasesHandler() end,
-  ["/agent/leases/1"] = function() jrebelLeases1Handler() end,
-  ["/jrebel/validate-connection"] = function() jrebelValidateHandler() end,
+  ["/jrebel/leases"] =  function() return jrebelLeasesHandler() end,
+  ["/jrebel/leases/1"] = function() return jrebelLeases1Handler() end,
+  ["/agent/leases"] = function()  return jrebelLeasesHandler() end,
+  ["/agent/leases/1"] = function() return jrebelLeases1Handler() end,
+  ["/jrebel/validate-connection"] = function() return jrebelValidateHandler() end,
   -- idea
-  ["/rpc/ping.action"] = function() pingHandler() end,
-  ["/rpc/obtainTicket.action"] = function() obtainTicketHandler() end,
-  ["/rpc/releaseTicket.action"] = function() releaseTicketHandler() end,
+  ["/rpc/ping.action"] = function() return pingHandler() end,
+  ["/rpc/obtainTicket.action"] = function() return obtainTicketHandler() end,
+  ["/rpc/releaseTicket.action"] = function() return releaseTicketHandler() end,
   default = function () ngx.exit(ngx.HTTP_FORBIDDEN) end
 }
 
@@ -236,10 +236,10 @@ function obtainTicketHandler()
 end
 
 function pingHandler()
-  releaseAndPingHandler("PingResponse")
+  return releaseAndPingHandler("PingResponse")
 end
 function releaseTicketHandler()
-  releaseAndPingHandler("ReleaseTicketResponse")
+  return releaseAndPingHandler("ReleaseTicketResponse")
 end
 function releaseAndPingHandler(type)
   ngx.header.content_type = "text/html; charset=utf-8"
